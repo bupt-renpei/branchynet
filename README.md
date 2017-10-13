@@ -16,7 +16,7 @@ If you use this codebase, please cite:
 * Python 2.7
 
 ### Python Dependencies
-* chainer
+* chainer <= 1.24.0 
 * matplotlib
 * dill
 * scikit-image
