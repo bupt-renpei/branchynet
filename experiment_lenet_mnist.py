@@ -10,6 +10,8 @@ from chainer import cuda
 
 # In[3]:
 
+print 'chainer.__version__ : ', chainer.__version__
+
 from networks import lenet_mnist
 
 print '1. lenet_mnist.get_network()'
@@ -152,7 +154,7 @@ g_diffs *= 1000.
 # (CPU)                           network='LeNet')
 
 print '6. GPU Results:'
-utils.branchy_table_results('LeNet-MNIST', g_baseacc, g_basediff, g_accs, c_diffs, g_exits, g_ts)
+utils.branchy_table_results('LeNet-MNIST', g_baseacc, g_basediff, g_accs, g_diffs, g_exits, g_ts)
 
 
 # Save model/data
