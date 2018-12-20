@@ -12,13 +12,13 @@ If you use this codebase, please cite:
     }
     
 ### Requirements
-* A machine with a decent GPU
-* Python 2.7
+* A machine with a decent GPU (CUDA8.0-cudnn6-devel)
+* Python 2.7 (Anaconda)
 
 ### Python Dependencies
-* chainer <= 1.24.0 
+* chainer = 1.24.0 
 * matplotlib
-* dill
+* dill = 0.2.5
 * scikit-image
 * scipy
 
