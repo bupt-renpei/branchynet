@@ -5,3 +5,4 @@
 #wget 'https://dl.dropboxusercontent.com/u/4542002/branchynet/data.npz' -O data.npz
 
 cp ../data.npz /home/acer/branchynet/datasets/data/pcifar10
+echo 'copy finish'
