@@ -13,7 +13,7 @@ If you use this codebase, please cite:
     
 ### Requirements
 * A machine with a decent GPU (CUDA8.0-cudnn6-devel)
-* Python 2.7 (Anaconda)
+* Python 2.7 (Anaconda py 2.7.15)
 
 ### Python Dependencies
 * chainer = 1.24.0 
