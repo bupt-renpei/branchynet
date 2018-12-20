@@ -44,8 +44,6 @@ class BranchyNet:
                     newlink = copy.deepcopy(branchlink)
                     newlink.name = None
                     net.add_link(newlink)
-                print 'in /branchynet/net.py'
-                print link.weight
                 self.models.append(net)
         for branchlink in link:
             newlink = copy.deepcopy(branchlink)

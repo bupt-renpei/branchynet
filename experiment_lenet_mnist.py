@@ -10,7 +10,7 @@ from chainer import cuda
 
 # In[3]:
 
-print 'chainer.__version__ : ', chainer.__version__
+# rprint 'chainer.__version__ : ', chainer.__version__
 
 from networks import lenet_mnist
 
