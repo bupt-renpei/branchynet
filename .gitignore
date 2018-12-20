@@ -1,7 +1,7 @@
 #datasets/data
-_*.ipynb
+#_*.ipynb
 .ipynb_checkpoints
 *.pyc
-_*
+#_*
 libmr.so
-result
+#result
