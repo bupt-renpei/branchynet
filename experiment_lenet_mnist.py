@@ -109,7 +109,7 @@ thresholds = [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.025, 0.05, 0.075, 0.1, 0.25,
 # In[20]:
 
 #GPU
-branchyNet.to_gpu()
+branchyNet.to_cpu()
 g_ts, g_accs, g_diffs, g_exits = utils.screen_branchy(branchyNet, x_test, y_test, thresholds, batchsize=TEST_BATCHSIZE, verbose=True)
 
 print '  g_accs : ', g_accs

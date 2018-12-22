@@ -26,21 +26,26 @@ def get_network(percentTrainKeeps=1):
         L.BatchNormalization(16),
         FL(F.relu),
     ]
-    network += [Branch([L.Convolution2D(16, 64,  5, pad=2, stride=1)] + norm() +  conv(64) + conv(32) + cap(28800))]
+    # network += [Branch([L.Convolution2D(16, 64,  5, pad=2, stride=1)] + norm() +  conv(64) + conv(32) + cap(28800))]
+    network += [Branch([L.Linear(None, 10)])]
     # network += [resnet.ResBlock(16, 16)]
     # network += [Branch(resnet.ResBlock(16, 16) + resnet.ResBlock(16, 16) + cap2(7200))]
 
     for i in range(n):
         network += [resnet.ResBlock(16, 16)]
+        network += [Branch([L.Linear(None, 10)])]
 
-    network += [Branch([resnet.ResBlock(16, 16), L.Linear(14400, 10)])]
+    # network += [Branch([resnet.ResBlock(16, 16), L.Linear(14400, 10)])]
 
     for i in range(n):
         network += [resnet.ResBlock(32 if i > 0 else 16, 32,
                                        1 if i > 0 else 2)]
+        network += [Branch([L.Linear(None, 10)])]
+
     for i in range(n):
         network += [resnet.ResBlock(64 if i > 0 else 32, 64,
                                        1 if i > 0 else 2)]
+        network += [Branch([L.Linear(None, 10)])]
 
     network += [FL(F.average_pooling_2d, 6, 1)]
     network += [Branch([L.Linear(576, 10)])]

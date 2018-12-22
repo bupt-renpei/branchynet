@@ -108,7 +108,7 @@ thresholds = [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.025, 0.05, 0.075, 0.1, 0.25,
 # In[ ]:
 
 #GPU
-branchyNet.to_gpu()
+branchyNet.to_cpu()
 g_ts, g_accs, g_diffs, g_exits = utils.screen_branchy(branchyNet, x_test, y_test, thresholds, batchsize=TEST_BATCHSIZE, verbose=True)
 
 print '  g_accs : ', g_accs
@@ -152,6 +152,8 @@ g_diffs *= 1000.
 # (CPU) utils.branchy_table_results(c_baseacc, c_basediff, g_basediff, c_accs, c_diffs, g_accs, g_diffs, inc_amt=0.000,
 # (CPU)                           network='ResNet')
 
+print 'GPU Results:'
+utils.branchy_table_results('ResNet', g_baseacc, g_basediff, g_accs, g_diffs, g_exits, g_ts)
 
 # Save model/data
 
