@@ -48,8 +48,7 @@ main_loss, main_acc, main_time = utils.train(branchyNet, x_train, y_train, main=
 # In[ ]:
 
 TRAIN_NUM_EPOCHS = 100
-branch_loss, branch_acc, branch_time = utils.train(branchyNet, x_train, y_train, batchsize=TRAIN_BATCHSIZE,
-                                             num_epoch=TRAIN_NUM_EPOCHS)
+branch_loss, branch_acc, branch_time = utils.train(branchyNet, x_train, y_train, batchsize=TRAIN_BATCHSIZE, num_epoch=TRAIN_NUM_EPOCHS)
 
 #set network to inference mode
 #branchyNet.testing()

@@ -27,7 +27,7 @@ x_train,y_train,x_test,y_test = pcifar10.get_data()
 
 # Settings
 
-TRAIN_BATCHSIZE = 64
+TRAIN_BATCHSIZE = 24  # 64
 TEST_BATCHSIZE = 1
 TRAIN_NUM_EPOCHS = 100
 
