@@ -2,7 +2,7 @@ from branchynet.net import BranchyNet
 from branchynet.links import *
 import chainer.functions as F
 import chainer.links as L
-from branchynet import utils, visualize
+from branchynet import utils
 from chainer import cuda
 
 
@@ -22,6 +22,8 @@ branchyNet.training()
 
 from datasets import pcifar10
 
+print '1. pcifar10.get_data()'
+
 x_train,y_train,x_test,y_test = pcifar10.get_data()
 
 
@@ -37,7 +39,7 @@ TRAIN_NUM_EPOCHS = 50
 # Train Main Network
 
 # In[ ]:
-
+print '2. Train Main Network'
 main_loss, main_acc, main_time = utils.train(branchyNet, x_train, y_train, main=True, batchsize=TRAIN_BATCHSIZE,
                                              num_epoch=TRAIN_NUM_EPOCHS)
 
@@ -45,6 +47,7 @@ main_loss, main_acc, main_time = utils.train(branchyNet, x_train, y_train, main=
 # Train BranchyNet
 
 # In[ ]:
+print '3. Train BranchyNet'
 
 TRAIN_NUM_EPOCHS = 100
 branch_loss, branch_acc, branch_time = utils.train(branchyNet, x_train, y_train, batchsize=TRAIN_BATCHSIZE,
@@ -71,6 +74,8 @@ branch_loss, branch_acc, branch_time = utils.train(branchyNet, x_train, y_train,
 # Run test suite and visualize
 
 # In[ ]:
+
+print '4. set network to inference mode'
 
 #set network to inference mode
 branchyNet.testing()
@@ -113,6 +118,7 @@ thresholds = [0.0001, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 0.75, 1., 5., 10.]
 # In[ ]:
 
 #CPU
+print '5. utils.screen_branchy()'
 branchyNet.to_cpu()
 c_ts, c_accs, c_diffs, c_exits  = utils.screen_branchy(branchyNet, x_test, y_test, thresholds,
                                                      batchsize=TEST_BATCHSIZE, verbose=True)
@@ -139,6 +145,8 @@ c_diffs *= 1000.
 # Save model/data
 
 # In[ ]:
+
+print '6. Save model/data'
 
 import dill
 branchyNet.to_cpu()

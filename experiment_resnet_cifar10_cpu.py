@@ -2,7 +2,7 @@ from branchynet.net import BranchyNet
 from branchynet.links import *
 import chainer.functions as F
 import chainer.links as L
-from branchynet import utils, visualize
+from branchynet import utils
 from chainer import cuda
 
 
@@ -11,6 +11,8 @@ from chainer import cuda
 # In[3]:
 
 from networks import resnet_cifar10
+
+print '1. pcifar10.get_data()'
 
 branchyNet = resnet_cifar10.get_network()
 # (GPU) branchyNet.to_gpu()
@@ -38,12 +40,13 @@ TRAIN_NUM_EPOCHS = 100
 # Train Main Network
 
 # In[ ]:
-
+print '2. Train Main Network'
 main_loss, main_acc, main_time = utils.train(branchyNet, x_train, y_train, main=True, batchsize=TRAIN_BATCHSIZE,
                                              num_epoch=TRAIN_NUM_EPOCHS)
 
 
 # Train BranchyNet
+print '3. Train BranchyNet'
 
 # In[ ]:
 
@@ -73,6 +76,7 @@ branch_loss, branch_acc, branch_time = utils.train(branchyNet, x_train, y_train,
 # In[ ]:
 
 #set network to inference mode
+print '4. set network to inference mode'
 branchyNet.testing()
 branchyNet.verbose = False
 # (GPU) branchyNet.to_gpu()
@@ -113,6 +117,7 @@ thresholds = [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.025, 0.05, 0.075, 0.1, 0.25,
 # In[ ]:
 
 #CPU
+print '5. utils.screen_branchy()'
 branchyNet.to_cpu()
 c_ts, c_accs, c_diffs, c_exits  = utils.screen_branchy(branchyNet, x_test, y_test, thresholds,
                                                      batchsize=TEST_BATCHSIZE, verbose=True)
@@ -139,7 +144,7 @@ c_diffs *= 1000.
 # Save model/data
 
 # In[ ]:
-
+print '6. Save model/data'
 import dill
 branchyNet.to_cpu()
 with open("_models/resnet_cifar10_CPU.bn", "w") as f:

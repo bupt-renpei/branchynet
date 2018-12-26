@@ -2,7 +2,7 @@ from branchynet.net import BranchyNet
 from branchynet.links import *
 import chainer.functions as F
 import chainer.links as L
-from branchynet import utils, visualize
+from branchynet import utils
 from chainer import cuda
 
 
@@ -18,6 +18,7 @@ branchyNet.training()
 # Import Data
 
 from datasets import mnist
+print '1. mnist.get_data()'
 x_train, y_train, x_test, y_test = mnist.get_data()
 
 
@@ -30,14 +31,14 @@ TRAIN_NUM_EPOCHS = 50
 
 # Train Main Network
 
-
+print '2. Train Main Network'
 main_loss, main_acc, main_time = utils.train(branchyNet, x_train, y_train, main=True, batchsize=TRAIN_BATCHSIZE,
                                              num_epoch=TRAIN_NUM_EPOCHS)
 
 
 # Train BranchyNet
 
-
+print '3. Train BranchyNet'
 TRAIN_NUM_EPOCHS = 100
 branch_loss, branch_acc, branch_time = utils.train(branchyNet, x_train, y_train, batchsize=TRAIN_BATCHSIZE,
                                              num_epoch=TRAIN_NUM_EPOCHS)
@@ -61,6 +62,7 @@ branch_loss, branch_acc, branch_time = utils.train(branchyNet, x_train, y_train,
 
 
 #set network to inference mode
+print '4. set network to inference mode'
 branchyNet.testing()
 branchyNet.verbose = False
 # (GPU) branchyNet.to_gpu()
@@ -100,6 +102,7 @@ thresholds = [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.025, 0.05, 0.075, 0.1, 0.25,
 # In[32]:
 
 #CPU
+print '5. utils.screen_branchy()'
 branchyNet.to_cpu()
 c_ts, c_accs, c_diffs, c_exits  = utils.screen_branchy(branchyNet, x_test, y_test, thresholds,
                                                      batchsize=TEST_BATCHSIZE, verbose=True)
@@ -126,6 +129,7 @@ c_diffs *= 1000.
 # Save model/data
 
 # In[40]:
+print '6. Save model/data'
 
 import dill
 branchyNet.to_cpu()
