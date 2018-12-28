@@ -11,7 +11,7 @@ from chainer import cuda
 from networks import alex_cifar10
 
 branchyNet = alex_cifar10.get_network()
-# (GPU) branchyNet.to_gpu()
+branchyNet.to_gpu()
 branchyNet.training()
 
 
@@ -21,7 +21,7 @@ from datasets import pcifar10
 
 print '1. pcifar10.get_data()'
 
-x_train, y_train, x_test, y_test = pcifar10.get_data()
+x_train,y_train,x_test,y_test = pcifar10.get_data()
 
 
 # Settings
@@ -44,10 +44,13 @@ main_loss, main_acc, main_time = utils.train(branchyNet, x_train, y_train, main=
 print '3. Train BranchyNet'
 
 TRAIN_NUM_EPOCHS = 100
+
 branch_loss, branch_acc, branch_time = utils.train(branchyNet, x_train, y_train, batchsize=TRAIN_BATCHSIZE,
                                                    num_epoch=TRAIN_NUM_EPOCHS)
 
+
 # set network to inference mode
+
 # branchyNet.testing()
 
 
@@ -65,60 +68,65 @@ branch_loss, branch_acc, branch_time = utils.train(branchyNet, x_train, y_train,
 print '4. set network to inference mode'
 
 # set network to inference mode
+
 branchyNet.testing()
 branchyNet.verbose = False
-# (GPU) branchyNet.to_gpu()
-# (GPU) g_baseacc, g_basediff, _, _ = utils.test(branchyNet,x_test,y_test,main=True,batchsize=TEST_BATCHSIZE)
-# (GPU) g_basediff = (g_basediff / float(len(y_test))) * 1000.
 
-branchyNet.to_cpu()
-c_baseacc, c_basediff, _, _ = utils.test(branchyNet,x_test,y_test,main=True,batchsize=TEST_BATCHSIZE)
-c_basediff = (c_basediff / float(len(y_test))) * 1000.
+branchyNet.to_gpu()
+g_baseacc, g_basediff, _, _ = utils.test(branchyNet, x_test, y_test, main=True, batchsize=TEST_BATCHSIZE)
+g_basediff = (g_basediff / float(len(y_test))) * 1000.
+
+
+# (CPU) branchyNet.to_cpu()
+# (CPU) c_baseacc, c_basediff, _, _ = utils.test(branchyNet,x_test,y_test,main=True,batchsize=TEST_BATCHSIZE)
+# (CPU) c_basediff = (c_basediff / float(len(y_test))) * 1000.
 
 
 # Specify thresholds
+
 # thresholds = [0.0001, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 0.75, 1., 5., 10.]
 thresholds = [0.0001, 0.001, 0.005, 0.01, 0.05, 0.1, 0.25, 0.5]
-print thresholds
 
 
-#GPU
-# (GPU) branchyNet.to_gpu()
-# (GPU) g_ts, g_accs, g_diffs, g_exits = utils.screen_branchy(branchyNet, x_test, y_test, thresholds,
-# (GPU)                                                     batchsize=TEST_BATCHSIZE, verbose=True)
+
+# GPU
+
+print '5. utils.screen_branchy()'
+
+branchyNet.to_gpu()
+g_ts, g_accs, g_diffs, g_exits = utils.screen_branchy(branchyNet, x_test, y_test, thresholds,
+                                                      batchsize=TEST_BATCHSIZE, verbose=True)
 # g_ts, g_accs, g_diffs, g_exits = utils.screen_leaky(leakyNet, x_test, y_test, thresholds, inc_amt=-0.1,
 #                                                     batchsize=TEST_BATCHSIZE, verbose=True)
 
 # convert to ms
-# (GPU) g_diffs *= 1000.
+g_diffs *= 1000.
 
 
-# (Visualizing) visualize.plot_line_tradeoff(g_accs, g_diffs, g_ts, g_exits, g_baseacc, g_basediff, all_samples=False, inc_amt=-0.0001000,
-# (Visualizing)                              our_label='BranchyAlexNet', orig_label='AlexNet', xlabel='Runtime (ms)',
-# (Visualizing)                              title='AlexNet GPU', output_path='_figs/alexnet_gpu.pdf')
+# (GPU-Visualizing) visualize.plot_line_tradeoff(g_accs, g_diffs, g_ts, g_exits, g_baseacc, g_basediff, all_samples=False, inc_amt=-0.0001000,
+# (GPU-Visualizing)                              our_label='BranchyAlexNet', orig_label='AlexNet', xlabel='Runtime (ms)',
+# (GPU-Visualizing)                              title='AlexNet GPU', output_path='_figs/alexnet_gpu.pdf')
 
 
-#CPU
-
-print '5. utils.screen_branchy()'
-
-branchyNet.to_cpu()
-c_ts, c_accs, c_diffs, c_exits  = utils.screen_branchy(branchyNet, x_test, y_test, thresholds,
-                                                     batchsize=TEST_BATCHSIZE, verbose=True)
+# CPU
+# (CPU) branchyNet.to_cpu()
+# (CPU) c_ts, c_accs, c_diffs, c_exits  = utils.screen_branchy(branchyNet, x_test, y_test, thresholds,
+# (CPU)                                                      batchsize=TEST_BATCHSIZE, verbose=True)
 # c_ts, c_accs, c_diffs, c_exits  = utils.screen_branchy(branchyNet, x_test, y_test, g_ts, inc_amt=0.01,
 #                                                      batchsize=TEST_BATCHSIZE, prescreen=False, verbose=True)
-#convert to ms
-c_diffs *= 1000.
+
+# convert to ms
+# (CPU) c_diffs *= 1000.
 
 
-# (Visualizing) visualize.plot_line_tradeoff(c_accs, c_diffs, c_ts, c_exits, c_baseacc, c_basediff, all_samples=False, inc_amt=-0.0001000,
-# (Visualizing)                              our_label='BranchyAlexNet', orig_label='AlexNet', xlabel='Runtime (ms)',
-# (Visualizing)                              title='AlexNet CPU', output_path='_figs/alexnet_cpu.pdf')
+# (CPU-Visualizing) visualize.plot_line_tradeoff(c_accs, c_diffs, c_ts, c_exits, c_baseacc, c_basediff, all_samples=False, inc_amt=-0.0001000,
+# (CPU-Visualizing)                              our_label='BranchyAlexNet', orig_label='AlexNet', xlabel='Runtime (ms)',
+# (CPU-Visualizing)                              title='AlexNet CPU', output_path='_figs/alexnet_cpu.pdf')
 
 
-#Compute table results
-# (GPU) utils.branchy_table_results(c_baseacc, c_basediff, g_basediff, c_accs, c_diffs, g_accs, g_diffs, inc_amt=0.000,
-# (GPU)                           network='AlexNet')
+# Compute table results
+# (C-GPU) utils.branchy_table_results(c_baseacc, c_basediff, g_basediff, c_accs, c_diffs, g_accs, g_diffs, inc_amt=0.000,
+# (C-GPU)                           network='AlexNet')
 
 
 # Save model/data
@@ -127,9 +135,9 @@ print '6. Save model/data'
 
 import dill
 branchyNet.to_cpu()
-with open("_models/alexnet_cifar10_CPU.bn", "w") as f:
+with open("_models/alexnet_cifar10_GPU.bn", "w") as f:
     dill.dump(branchyNet, f)
-with open("_models/alexnet_cifar10_results_CPU.pkl", "w") as f:
+with open("_models/alexnet_cifar10_results_GPU.pkl", "w") as f:
     dill.dump({'main_loss': main_loss, 'main_acc': main_acc, 'main_time': main_time, 'branch_loss': branch_loss,
-               'branch_acc': branch_acc, 'branch_time': branch_time, 'c_baseacc': c_baseacc, 'c_basediff': c_basediff,
-               'c_ts': c_ts, 'c_accs': c_accs, 'c_diffs': c_diffs, 'c_exits': c_exits}, f)
+               'branch_acc': branch_acc, 'branch_time': branch_time, 'g_baseacc': g_baseacc, 'g_basediff': g_basediff,
+               'g_ts': g_ts, 'g_accs': g_accs, 'g_diffs': g_diffs, 'g_exits': g_exits}, f)

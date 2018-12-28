@@ -222,7 +222,7 @@ def train(branchyNet,x_train,y_train,batchsize=10000,num_epoch=20,main=False):
     totaltime = 0
     
     for epoch in plotepochs:
-        print 'current epoch : ', epoch
+        print 'Train-current epoch : ', epoch
         indexes = np.random.permutation(datasize)
         sum_loss = 0
         num = 0
