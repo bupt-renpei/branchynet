@@ -33,7 +33,7 @@ TRAIN_BATCHSIZE = 16  # 64
 TEST_BATCHSIZE = 64  # 1  #  ren -
 TRAIN_NUM_EPOCHS = 100
 
-branchyNet.verbose = True  # ren +
+branchyNet.verbose = False  # ren +
 branchyNet.gpu = True  # ren +
 
 
