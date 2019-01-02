@@ -30,7 +30,7 @@ x_train,y_train,x_test,y_test = pcifar10.get_data()
 # Settings
 
 TRAIN_BATCHSIZE = 512
-TEST_BATCHSIZE = 128  # 1  #  ren -
+TEST_BATCHSIZE = 64  # 1  #  ren -
 TRAIN_NUM_EPOCHS = 100  # 50
 
 branchyNet.verbose = True  # ren +
@@ -97,7 +97,8 @@ branchyNet.gpu = True  # ren +
 
 
 branchyNet.to_gpu()
-g_baseacc, g_basediff, _, _ = utils.test(branchyNet, x_test, y_test, main=True, batchsize=TEST_BATCHSIZE)
+g_baseacc, g_basediff, g_num_exits, g_accbreakdowns = utils.test(branchyNet, x_test, y_test, main=True,
+                                                                 batchsize=TEST_BATCHSIZE)
 g_basediff = (g_basediff / float(len(y_test))) * 1000.
 
 branchyNet.to_cpu()
@@ -123,6 +124,10 @@ print 'Thresholds : ', thresholds
 print '6. utils.screen_branchy()'
 
 branchyNet.to_gpu()
+
+branchyNet.gpu = True  # ren +
+branchyNet.verbose = True  # ren +
+
 g_ts, g_accs, g_diffs, g_exits = utils.screen_branchy(branchyNet, x_test, y_test, thresholds,
                                                       batchsize=TEST_BATCHSIZE, verbose=True)
 

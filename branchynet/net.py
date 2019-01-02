@@ -118,7 +118,7 @@ class BranchyNet:
         self.main.to_cpu()
         [model.to_cpu() for model in self.models]
                     
-    def test(self,x,t=None):        
+    def test(self,x,t=None):
         numexits = []
         accuracies = []
         
@@ -149,7 +149,9 @@ class BranchyNet:
             smh = model.test(h,model.endi)
             
             softmax = F.softmax(smh)
-            
+
+            self.gpu = True  # ren +
+
             if self.gpu:
                 entropy_value = entropy_gpu(softmax).get()
             else:
@@ -180,6 +182,8 @@ class BranchyNet:
             total = entropy_value.shape[0]
             numkeep = total-numexit
             numexits.append(numexit)
+
+            self.gpu = True  # ren +
                         
             if self.gpu:
                 xdata = h.data.get()
@@ -212,7 +216,9 @@ class BranchyNet:
                 exitH = model.test(exitXVar,model.endi)
                 
                 accuracy = F.accuracy(exitH,exitTVar)
-                
+
+                self.gpu = True  # ren +
+
                 if self.gpu:
                     accuracies.append(accuracy.data.get())
                 else:
@@ -224,7 +230,9 @@ class BranchyNet:
         for i,accuracy in enumerate(accuracies):
             overall += accuracy*numexits[i]
         overall /= np.sum(numexits)
-        
+
+        self.verbose = True  # ren +
+
         if self.verbose:
             print "numexits", numexits
             print "accuracies", accuracies
