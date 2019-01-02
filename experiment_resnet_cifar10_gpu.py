@@ -30,7 +30,7 @@ x_train, y_train, x_test, y_test = pcifar10.get_data()
 # Settings
 
 TRAIN_BATCHSIZE = 16  # 64
-TEST_BATCHSIZE = 1
+TEST_BATCHSIZE = 128  # 1  #  ren -
 TRAIN_NUM_EPOCHS = 100
 
 branchyNet.verbose = True  # ren +

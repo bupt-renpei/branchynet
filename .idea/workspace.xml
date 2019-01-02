@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87b2a077-5545-4c7e-a6c2-6bcf64c8b710" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/experiment_lenet_mnist_gpu.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_lenet_mnist_gpu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiment_resnet_cifar10_gpu.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiment_resnet_cifar10_gpu.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +36,7 @@
           <entry key="gitignore" value="1" />
           <entry key="ipynb" value="6" />
           <entry key="md" value="3" />
-          <entry key="py" value="143" />
+          <entry key="py" value="144" />
           <entry key="sh" value="16" />
         </counts>
       </usages-collector>
@@ -45,13 +46,13 @@
           <entry key="IPNB" value="6" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="143" />
+          <entry key="Python" value="144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="14" />
-          <entry key="py" value="1888" />
+          <entry key="py" value="1944" />
           <entry key="sh" value="79" />
         </counts>
       </usages-collector>
@@ -59,18 +60,30 @@
         <counts>
           <entry key="Bash" value="79" />
           <entry key="Markdown" value="14" />
-          <entry key="Python" value="1888" />
+          <entry key="Python" value="1944" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/experiment_resnet_cifar10_gpu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1950">
-              <caret line="130" column="51" selection-start-line="130" selection-start-column="51" selection-end-line="131" selection-end-column="89" />
+            <state relative-caret-position="-187">
+              <caret line="137" selection-start-line="137" selection-end-line="139" selection-end-column="90" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/experiment_lenet_mnist_gpu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1298">
+              <caret line="170" column="17" lean-forward="true" selection-start-line="170" selection-start-column="17" selection-end-line="170" selection-end-column="17" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -131,12 +144,12 @@
         <option value="$PROJECT_DIR$/experiment_resnet_cifar10.py" />
         <option value="$PROJECT_DIR$/get_results_gpu.sh" />
         <option value="$PROJECT_DIR$/experiment_alex_cifar10_gpu.py" />
-        <option value="$PROJECT_DIR$/experiment_lenet_mnist_gpu.py" />
         <option value="$PROJECT_DIR$/experiment_lenet_mnist_cpu.py" />
         <option value="$PROJECT_DIR$/experiment_alex_cifar10_cpu.py" />
         <option value="$PROJECT_DIR$/experiment_resnet_cifar10_cpu.py" />
         <option value="$PROJECT_DIR$/branchynet/utils.py" />
         <option value="$PROJECT_DIR$/experiment_resnet_cifar10_gpu.py" />
+        <option value="$PROJECT_DIR$/experiment_lenet_mnist_gpu.py" />
       </list>
     </option>
   </component>
@@ -437,16 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_lenet_mnist_gpu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="85" column="46" lean-forward="true" selection-start-line="85" selection-end-line="86" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/experiment_lenet_mnist_cpu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -503,8 +506,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/experiment_resnet_cifar10_gpu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="130" column="51" selection-start-line="130" selection-start-column="51" selection-end-line="131" selection-end-column="89" />
+        <state relative-caret-position="-187">
+          <caret line="137" selection-start-line="137" selection-end-line="139" selection-end-column="90" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiment_lenet_mnist_gpu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1298">
+          <caret line="170" column="17" lean-forward="true" selection-start-line="170" selection-start-column="17" selection-end-line="170" selection-end-column="17" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
