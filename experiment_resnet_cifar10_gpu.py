@@ -138,6 +138,9 @@ g_diffs *= 1000.
 branchyNet.to_cpu()
 with open("_models/resnet_cifar10_results_GPU_(screen_branchy).pkl", "w") as f:
     dill.dump({'g_ts': g_ts, 'g_accs': g_accs, 'g_diffs': g_diffs, 'g_exits': g_exits}, f)
+with open("_models/resnet_cifar10_results_GPU_(g_accs).pkl", "w") as f:
+    dill.dump({'g_accs': g_accs}, f)
+
 
 
 # (GPU-Visualizing) visualize.plot_line_tradeoff(g_accs, g_diffs, g_ts, g_exits, g_baseacc, g_basediff, all_samples=False, inc_amt=-0.0001000,
