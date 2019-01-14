@@ -1,5 +1,5 @@
 #!/bin/sh
-./download_data.sh
+../download_data.sh
 
 #mkdir _models
 #mkdir _figs
