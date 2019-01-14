@@ -34,18 +34,18 @@
         <counts>
           <entry key="gitignore" value="2" />
           <entry key="ipynb" value="6" />
-          <entry key="md" value="3" />
-          <entry key="py" value="209" />
-          <entry key="sh" value="22" />
+          <entry key="md" value="4" />
+          <entry key="py" value="213" />
+          <entry key="sh" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="22" />
+          <entry key="Bash" value="29" />
           <entry key="IPNB" value="6" />
-          <entry key="Markdown" value="3" />
+          <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="209" />
+          <entry key="Python" value="213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -65,7 +65,44 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train_lenet_mnist_gpu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datasets/mnist.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/sklearn/datasets/mldata.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="50" column="35" lean-forward="true" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+              <folding>
+                <element signature="e#107#116#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -109,6 +146,7 @@
         <option value="$PROJECT_DIR$/fine-grained/train_alex_cifar10_gpu.py" />
         <option value="$PROJECT_DIR$/fine-grained/train_lenet_mnist_gpu.py" />
         <option value="$PROJECT_DIR$/fine-grained/train_resnet_cifar10_gpu.py" />
+        <option value="$PROJECT_DIR$/Original/get_results.sh" />
       </list>
     </option>
   </component>
@@ -118,7 +156,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="69" />
     <option name="y" value="-4" />
     <option name="width" value="1297" />
@@ -155,6 +193,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Original" />
       <recent name="$PROJECT_DIR$/fine-grained/_tool" />
       <recent name="$PROJECT_DIR$/_models" />
     </key>
@@ -185,7 +225,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="-11" width="1319" height="780" extended-state="6" />
+    <frame x="48" y="-11" width="1319" height="780" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27773407" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -219,6 +260,17 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/sklearn/datasets/mldata.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/networks/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -233,27 +285,17 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/readPKL.sh" />
-    <entry file="file://$PROJECT_DIR$/experiment_lenet_mnist.ipynb">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_lenet_mnist.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="270">
-            <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datasets/data/pcifar10/download_data.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_resnet_cifar10.ipynb">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_resnet_cifar10.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="22" />
@@ -270,66 +312,45 @@
     <entry file="file://$PROJECT_DIR$/branchynet/functions.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_alex_cifar10.ipynb">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_alex_cifar10.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/download_data.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_alex_cifar10.py">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_alex_cifar10.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_resnet_cifar10.py">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_resnet_cifar10.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_lenet_mnist_cpu.py">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_lenet_mnist_cpu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
           <caret line="79" selection-start-line="79" selection-end-line="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_alex_cifar10_cpu.py">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_alex_cifar10_cpu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_resnet_cifar10_cpu.py">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_resnet_cifar10_cpu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="115" column="47" lean-forward="true" selection-start-line="115" selection-start-column="47" selection-end-line="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/get_results_cpu.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/get_results_gpu.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -357,17 +378,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_lenet_mnist.py">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_lenet_mnist.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-667">
           <caret line="40" column="41" lean-forward="true" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_lenet_mnist_gpu.py">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_lenet_mnist_gpu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2062">
           <caret line="14" column="30" selection-end-line="184" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -375,14 +399,14 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/fine-grained/_models/train_resnet_cifar10_gpu.py" />
-    <entry file="file://$PROJECT_DIR$/experiment_alex_cifar10_gpu.py">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_alex_cifar10_gpu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-188">
           <caret line="138" lean-forward="true" selection-end-line="184" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment_resnet_cifar10_gpu.py">
+    <entry file="file://$PROJECT_DIR$/Original/experiment_resnet_cifar10_gpu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="116" column="25" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="25" />
@@ -419,7 +443,7 @@
     <entry file="file://$PROJECT_DIR$/_models/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/fine-grained/_tool/readPKL.py">
+    <entry file="file://$PROJECT_DIR$/_tool/readPKL.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="9" selection-end-column="10" />
@@ -429,7 +453,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fine-grained/_tool/pkl2txt.py">
+    <entry file="file://$PROJECT_DIR$/_tool/pkl2txt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="14" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="14" />
@@ -443,30 +467,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fine-grained/train.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/get_results.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/networks/lenet_mnist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -490,24 +490,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/sklearn/datasets/mldata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="28" column="69" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/mnist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fine-grained/train_alex_cifar10_gpu.py">
+    <entry file="file://$PROJECT_DIR$/train_alex_cifar10_gpu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -526,19 +509,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fine-grained/train_lenet_mnist_gpu.py">
+    <entry file="file://$PROJECT_DIR$/train_resnet_cifar10_gpu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="120">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Original/get_results_cpu.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Original/get_results_gpu.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Original/get_results.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/download_data.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="270">
+            <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fine-grained/train.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networks/lenet_mnist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_lenet_mnist_gpu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fine-grained/train_resnet_cifar10_gpu.py">
+    <entry file="file://$PROJECT_DIR$/datasets/mnist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="60">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/sklearn/datasets/mldata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="50" column="35" lean-forward="true" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+          <folding>
+            <element signature="e#107#116#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
