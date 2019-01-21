@@ -58,7 +58,9 @@ with open("_models/test_lenet_mnist_gpu_(g_accbreakdowns).pkl", "w") as f:
 # Specify thresholds
 
 # thresholds = [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.025, 0.05, 0.075, 0.1, 0.25, 0.5, 0.75, 1., 2., 3., 5., 10.]
-thresholds = [0.0001, 0.001, 0.005, 0.01, 0.05, 0.1, 0.25, 0.5]
+# thresholds = [0.0001, 0.001, 0.005, 0.01, 0.05, 0.1, 0.25, 0.5]
+thresholds = [1.]
+
 
 print 'Thresholds : ', thresholds
 
