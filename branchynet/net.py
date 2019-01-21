@@ -229,13 +229,13 @@ class BranchyNet:
         overall = 0
         for i,accuracy in enumerate(accuracies):
             overall += accuracy*numexits[i]
-            print 'branchynet/net.py --- : accuracy:', accuracy
         overall /= np.sum(numexits)
 
         if self.verbose:
-            print "numexits", numexits
-            print "accuracies", accuracies
             print "overall accuracy", overall
+            print "accuracies", accuracies
+            print "numexits", numexits
+
         
         return overall, accuracies, numexits, totaltime
     

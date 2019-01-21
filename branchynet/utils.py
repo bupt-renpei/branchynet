@@ -93,7 +93,7 @@ def test(branchyNet,x_test,y_test=None,batchsize=10000,main=False):
         if main:
             # acc is the accurate of a batch
             # diff is the inference time of a batch
-            acc, diff = branchyNet.test_main(x, t)
+            acc, diff = branchyNet.test_main(x, t)  # acc and time of each test batch
             #if hasattr(h.data,'get'):
             #    finals.append(h.data.get())
             #else:
@@ -113,7 +113,7 @@ def test(branchyNet,x_test,y_test=None,batchsize=10000,main=False):
         overall += input_data.shape[0]*acc
         nsamples += input_data.shape[0]
         
-    overall /= nsamples
+    overall /= nsamples  # average accuracy
     
     for i in range(branchyNet.numexits()):
         if num_exits[i] > 0:

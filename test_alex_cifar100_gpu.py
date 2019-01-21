@@ -5,16 +5,15 @@ import chainer.links as L
 from branchynet import utils
 from chainer import cuda
 
-
 # Load Network
 
 import dill
-with open("_models/train_alexnet_cifar10_gpu_(network).bn", "r") as f:
+
+with open("_models/train_alexnet_cifar100_gpu_(network).bn", "r") as f:
     branchyNet = dill.load(f)
 
 # branchyNet.print_models()  # ren +
 print '0. Load Network'
-
 
 # Import Data
 
@@ -22,15 +21,14 @@ print '0. Load Network'
 # _, _, x_test, y_test = pcifar10.get_data()  # original
 
 from _tool import chainerDataset
-_, _, x_test, y_test = chainerDataset.get_chainer_cifar10()
+
+_, _, x_test, y_test = chainerDataset.get_chainer_cifar100()
 
 print '1. Import Data'
-
 
 # Settings
 
 TEST_BATCHSIZE = 1
-
 
 print '2. set network to inference mode'
 
@@ -38,7 +36,6 @@ branchyNet.to_gpu()
 branchyNet.testing()
 branchyNet.verbose = False
 branchyNet.gpu = True  # ren +
-
 
 # Test main
 
@@ -50,13 +47,13 @@ print 'main accuracy: ', g_baseacc
 g_basediff = (g_basediff / float(len(y_test))) * 1000.
 
 branchyNet.to_cpu()
-with open("_models/test_alexnet_cifar10_gpu_(g_baseacc).pkl", "w") as f:
+with open("_models/test_alexnet_cifar100_gpu_(g_baseacc).pkl", "w") as f:
     dill.dump({'g_baseacc': g_baseacc}, f)
-with open("_models/test_alexnet_cifar10_gpu_(g_basediff).pkl", "w") as f:
+with open("_models/test_alexnet_cifar100_gpu_(g_basediff).pkl", "w") as f:
     dill.dump({'g_basediff': g_basediff}, f)
-with open("_models/test_alexnet_cifar10_gpu_(g_num_exits).pkl", "w") as f:
+with open("_models/test_alexnet_cifar100_gpu_(g_num_exits).pkl", "w") as f:
     dill.dump({'g_num_exits': g_num_exits}, f)
-with open("_models/test_alexnet_cifar10_gpu_(g_accbreakdowns).pkl", "w") as f:
+with open("_models/test_alexnet_cifar100_gpu_(g_accbreakdowns).pkl", "w") as f:
     dill.dump({'g_accbreakdowns': g_accbreakdowns}, f)
 
 branchyNet.verbose = True
@@ -67,13 +64,13 @@ b_baseacc, b_basediff, b_num_exits, b_accbreakdowns = utils.test(branchyNet, x_t
                                                                  batchsize=TEST_BATCHSIZE)
 
 branchyNet.to_cpu()
-with open("_models/test_alexnet_cifar10_gpu_(b_baseacc).pkl", "w") as f:
+with open("_models/test_alexnet_cifar100_gpu_(b_baseacc).pkl", "w") as f:
     dill.dump({'b_baseacc': b_baseacc}, f)
-with open("_models/test_alexnet_cifar10_gpu_(b_basediff).pkl", "w") as f:
+with open("_models/test_alexnet_cifar100_gpu_(b_basediff).pkl", "w") as f:
     dill.dump({'b_basediff': b_basediff}, f)
-with open("_models/test_alexnet_cifar10_gpu_(b_num_exits).pkl", "w") as f:
+with open("_models/test_alexnet_cifar100_gpu_(b_num_exits).pkl", "w") as f:
     dill.dump({'b_num_exits': b_num_exits}, f)
-with open("_models/test_alexnet_cifar10_gpu_(b_accbreakdowns).pkl", "w") as f:
+with open("_models/test_alexnet_cifar100_gpu_(b_accbreakdowns).pkl", "w") as f:
     dill.dump({'b_accbreakdowns': b_accbreakdowns}, f)
 
 print 'b_baseacc', b_baseacc
@@ -101,15 +98,14 @@ g_ts, g_accs, g_diffs, g_exits = utils.screen_branchy(branchyNet, x_test, y_test
 # convert to ms
 g_diffs *= 1000.
 
-
 branchyNet.to_cpu()
-with open("_models/alexnet_cifar10_results_GPU_(g_ts).pkl", "w") as f:
+with open("_models/alexnet_cifar100_results_GPU_(g_ts).pkl", "w") as f:
     dill.dump({'g_ts': g_ts}, f)
-with open("_models/alexnet_cifar10_results_GPU_(g_accs).pkl", "w") as f:
+with open("_models/alexnet_cifar100_results_GPU_(g_accs).pkl", "w") as f:
     dill.dump({'g_accs': g_accs}, f)
-with open("_models/alexnet_cifar10_results_GPU_(g_diffs).pkl", "w") as f:
+with open("_models/alexnet_cifar100_results_GPU_(g_diffs).pkl", "w") as f:
     dill.dump({'g_diffs': g_diffs}, f)
-with open("_models/alexnet_cifar10_results_GPU_(g_exits).pkl", "w") as f:
+with open("_models/alexnet_cifar100_results_GPU_(g_exits).pkl", "w") as f:
     dill.dump({'g_exits': g_exits}, f)
 
 print 'g_ts: ', g_ts
