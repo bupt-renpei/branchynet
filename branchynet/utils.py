@@ -91,14 +91,16 @@ def test(branchyNet,x_test,y_test=None,batchsize=10000,main=False):
         x = Variable(input_data, volatile=True)
         t = Variable(label_data, volatile=True)
         if main:
-            acc, diff = branchyNet.test_main(x,t)
+            # acc is the accurate of a batch
+            # diff is the inference time of a batch
+            acc, diff = branchyNet.test_main(x, t)
             #if hasattr(h.data,'get'):
             #    finals.append(h.data.get())
             #else:
             #    finals.append(h.data)
             #accuracies = [acc]
         else:
-            acc, accuracies, test_exits, diff = branchyNet.test(x,t)
+            acc, accuracies, test_exits, diff = branchyNet.test(x, t)
             for i, exits in enumerate(test_exits):
                 num_exits[i] += exits
             for i in range(branchyNet.numexits()):

@@ -6,30 +6,33 @@ from branchynet import utils
 from chainer import cuda
 
 
-import dill
+# Load Network
 
+import dill
 with open("_models/train_alexnet_cifar10_gpu_(network).bn", "r") as f:
     branchyNet = dill.load(f)
 
-branchyNet.print_models()  # ren +
+# branchyNet.print_models()  # ren +
+print '0. Load Network'
 
 
 # Import Data
 
-from datasets import pcifar10
+# from datasets import pcifar10  # original
+# _, _, x_test, y_test = pcifar10.get_data()  # original
 
-print '1. pcifar10.get_data()'
+from _tool import chainerDataset
+_, _, x_test, y_test = chainerDataset.get_chainer_cifar10()
 
-_, _, x_test, y_test = pcifar10.get_data()
-
-
-TEST_BATCHSIZE = 64  # 1  #  ren -
-
+print '1. Import Data'
 
 
-print '5. set network to inference mode'
+# Settings
 
-# set network to inference mode
+TEST_BATCHSIZE = 128
+
+
+print '2. set network to inference mode'
 
 branchyNet.to_gpu()
 branchyNet.testing()
@@ -41,9 +44,23 @@ branchyNet.to_gpu()
 
 g_baseacc, g_basediff, g_num_exits, g_accbreakdowns = utils.test(branchyNet, x_test, y_test, main=True,
                                                                  batchsize=TEST_BATCHSIZE)
+
+print 'main accuracy : ', g_baseacc
+
 g_basediff = (g_basediff / float(len(y_test))) * 1000.
 
 branchyNet.to_cpu()
-with open("_models/alexnet_cifar10_results_GPU_(Test).pkl", "w") as f:
-    dill.dump({'g_baseacc': g_baseacc, 'g_basediff': g_basediff, 'g_num_exits': g_num_exits,
-               'g_accbreakdowns': g_accbreakdowns}, f)
+with open("_models/test_alexnet_cifar10_gpu_(g_baseacc).pkl", "w") as f:
+    dill.dump({'g_baseacc': g_baseacc}, f)
+with open("_models/test_alexnet_cifar10_gpu_(g_basediff).pkl", "w") as f:
+    dill.dump({'g_basediff': g_basediff}, f)
+with open("_models/test_alexnet_cifar10_gpu_(g_num_exits).pkl", "w") as f:
+    dill.dump({'g_num_exits': g_num_exits}, f)
+with open("_models/test_alexnet_cifar10_gpu_(g_accbreakdowns).pkl", "w") as f:
+    dill.dump({'g_accbreakdowns': g_accbreakdowns}, f)
+
+
+b_baseacc, b_basediff, b_num_exits, b_accbreakdowns = utils.test(branchyNet, x_test, y_test,
+                                                                 batchsize=TEST_BATCHSIZE)
+
+print b_basediff, b_num_exits

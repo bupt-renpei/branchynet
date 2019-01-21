@@ -20,37 +20,36 @@ def gen_2b(branch1, branch2):
     network = [
         L.Convolution2D(3, 32, 5, pad=2, stride=1),
         FL(F.relu),
-        Branch([L.Linear(None, 100)]),
+        Branch([L.Linear(None, 100)]),  # 1
         FL(F.max_pooling_2d, 3, 2),
         FL(F.local_response_normalization, n=3, alpha=5e-05, beta=0.75),
-        Branch([L.Linear(None, 100)]),
+        Branch([L.Linear(None, 100)]),  # 2
         L.Convolution2D(32, 64, 5, pad=2, stride=1),
         FL(F.relu),
-        Branch([L.Linear(None, 100)]),
+        Branch([L.Linear(None, 100)]),  # 3
         FL(F.max_pooling_2d, 3, 2),
         FL(F.local_response_normalization, n=3, alpha=5e-05, beta=0.75),
-        Branch([L.Linear(None, 100)]),
+        Branch([L.Linear(None, 100)]),  # 4
         L.Convolution2D(64, 96, 3, pad=1, stride=1),
         FL(F.relu),
-        Branch([L.Linear(None, 100)]),
+        Branch([L.Linear(None, 100)]),  # 5
         L.Convolution2D(96, 96, 3, pad=1, stride=1),
         FL(F.relu),
-        Branch([L.Linear(None, 100)]),
+        Branch([L.Linear(None, 100)]),  # 6
         L.Convolution2D(96, 64, 3, pad=1, stride=1),
         FL(F.relu),
-        Branch([L.Linear(None, 100)]),
+        Branch([L.Linear(None, 100)]),  # 7
         FL(F.max_pooling_2d, 3, 2),
-        Branch([L.Linear(None, 100)]),
+        Branch([L.Linear(None, 100)]),  # 8
         L.Linear(1024, 256),
         FL(F.relu),
         SL(FL(F.dropout, 0.5, train=True)),
-        Branch([L.Linear(None, 100)]),
+        Branch([L.Linear(None, 100)]),  # 9
         L.Linear(256, 128),
         FL(F.relu),
         SL(FL(F.dropout, 0.5, train=True)),
         Branch([L.Linear(128, 100)])
     ]
-
     return network
 
 

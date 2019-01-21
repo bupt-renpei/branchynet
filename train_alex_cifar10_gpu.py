@@ -9,10 +9,10 @@ from chainer import cuda
 # Define Network
 
 from networks import alex_cifar10
-
 branchyNet = alex_cifar10.get_network()
 
-branchyNet.print_models()  # ren +
+# branchyNet.print_models()  # ren +
+print '0. Define Network'
 
 branchyNet.to_gpu()
 branchyNet.training()
@@ -20,17 +20,18 @@ branchyNet.training()
 
 # Import Data
 
-from datasets import pcifar10
+# from datasets import pcifar10  # original
+# x_train, y_train, _, _ = pcifar10.get_data()  # original
 
-print '1. pcifar10.get_data()'
+from _tool import chainerDataset
+x_train, y_train, _, _ = chainerDataset.get_chainer_cifar10()
 
-x_train, y_train, _, _ = pcifar10.get_data()
+print '1. Import Data'
 
 
 # Settings
 
-TRAIN_BATCHSIZE = 512
-# TEST_BATCHSIZE = 64  # 1  #  ren -
+TRAIN_BATCHSIZE = 128  # 512 ren -
 TRAIN_NUM_EPOCHS = 100  # 50
 
 branchyNet.verbose = False  # ren +

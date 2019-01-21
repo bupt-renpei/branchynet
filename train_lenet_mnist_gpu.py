@@ -9,10 +9,10 @@ from chainer import cuda
 # Define Network
 
 from networks import lenet_mnist
-
 branchyNet = lenet_mnist.get_network()
 
-branchyNet.print_models()  # ren +
+# branchyNet.print_models()  # ren +
+print '0. Define Network'
 
 branchyNet.to_gpu()
 branchyNet.training()
@@ -20,17 +20,18 @@ branchyNet.training()
 
 # Import Data
 
-from datasets import mnist
+# from datasets import mnist  # original
+# x_train, y_train, _, _ = mnist.get_data()  # original
 
-print '1. mnist.get_data()'
+from _tool import chainerDataset
+x_train, y_train, _, _ = chainerDataset.get_lenet_mnist()
 
-x_train, y_train, _, _ = mnist.get_data()
+print '1. Import Data'
 
 
 # Settings
 
-TRAIN_BATCHSIZE = 512
-# TEST_BATCHSIZE = 128
+TRAIN_BATCHSIZE = 128
 TRAIN_NUM_EPOCHS = 100
 
 branchyNet.verbose = False  # ren +

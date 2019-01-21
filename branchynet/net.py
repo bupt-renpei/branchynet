@@ -231,8 +231,6 @@ class BranchyNet:
             overall += accuracy*numexits[i]
         overall /= np.sum(numexits)
 
-        self.verbose = True  # ren +
-
         if self.verbose:
             print "numexits", numexits
             print "accuracies", accuracies
