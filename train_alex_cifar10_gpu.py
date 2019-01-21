@@ -8,8 +8,8 @@ from chainer import cuda
 
 # Define Network
 
-from networks import alex_cifar10
-branchyNet = alex_cifar10.get_network()
+from networks import alex_cifar
+branchyNet = alex_cifar.get_network(n_class=10)
 
 # branchyNet.print_models()  # ren +
 print '0. Define Network'

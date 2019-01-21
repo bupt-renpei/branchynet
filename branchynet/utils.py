@@ -257,12 +257,12 @@ def train(branchyNet,x_train,y_train,batchsize=10000,num_epoch=20,main=False):
             avgaccuracies.append(accuracies)
             # avgnumsamples.append(numsamples)
             # avgexitsamples.append(exitsamples)
-            print 'Accuracy at this epoch:', accuracies
 
         avgloss = np.mean(np.array(avglosses),0)
         avgaccuracy = np.mean(np.array(avgaccuracies),0)
         # avgnumsample = np.mean(np.array(avgnumsamples),0)
         # avgexitsample = np.mean(np.array(avgexitsamples),0)
+        print 'Accuracy at this epoch:', avgaccuracy
 
         plotlosses.append(avgloss)
         plotaccuracies.append(avgaccuracy)
