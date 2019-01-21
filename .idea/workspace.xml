@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87b2a077-5545-4c7e-a6c2-6bcf64c8b710" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/train_vgg16.cifar10_gpu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/networks/vgg11.cifar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/train_vgg16_cifar100_gpu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/branchynet/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/branchynet/net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/networks/vgg_cifar10.py" beforeDir="false" afterPath="$PROJECT_DIR$/networks/vgg_cifar10.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_lenet_mnist_gpu.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_lenet_mnist_gpu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/branchynet/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/branchynet/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/networks/alex_cifar10.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/networks/alex_cifar100.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/networks/lenet_mnist.py" beforeDir="false" afterPath="$PROJECT_DIR$/networks/lenet_mnist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/networks/resnet_cifar10.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/networks/resnet_cifar100.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/networks/vgg_cifar10.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_vgg16.cifar10_gpu.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_vgg16.cifar10_gpu.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +52,7 @@
           <entry key="gitignore" value="2" />
           <entry key="ipynb" value="6" />
           <entry key="md" value="4" />
-          <entry key="py" value="342" />
+          <entry key="py" value="356" />
           <entry key="sh" value="30" />
         </counts>
       </usages-collector>
@@ -56,13 +62,13 @@
           <entry key="IPNB" value="6" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="342" />
+          <entry key="Python" value="356" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="14" />
-          <entry key="py" value="3460" />
+          <entry key="py" value="3648" />
           <entry key="sh" value="97" />
         </counts>
       </usages-collector>
@@ -70,7 +76,7 @@
         <counts>
           <entry key="Bash" value="97" />
           <entry key="Markdown" value="14" />
-          <entry key="Python" value="3460" />
+          <entry key="Python" value="3648" />
         </counts>
       </usages-collector>
     </session>
@@ -78,22 +84,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/networks/vgg_cifar10.py">
+        <entry file="file://$PROJECT_DIR$/train_vgg16.cifar10_gpu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="165">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_alex_cifar10_gpu.py">
+        <entry file="file://$PROJECT_DIR$/train_vgg16_cifar100_gpu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="62" column="62" selection-start-line="62" selection-start-column="62" selection-end-line="62" selection-end-column="62" />
+            <state relative-caret-position="165">
+              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -102,10 +108,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/train_vgg16.cifar10_gpu.py">
+        <entry file="file://$PROJECT_DIR$/networks/vgg16_cifar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            <state relative-caret-position="975">
+              <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/networks/lenet_mnist.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/networks/vgg11.cifar.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-30">
+              <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,8 +146,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train_alex_cifar10_gpu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="53" lean-forward="true" selection-end-line="80" />
+            <state relative-caret-position="255">
+              <caret line="44" column="41" lean-forward="true" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -134,6 +167,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Branch</find>
+      <find>n_class</find>
+      <find>100</find>
+      <find>10</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,18 +212,21 @@
         <option value="$PROJECT_DIR$/train_alex_cifar10_gpu.py" />
         <option value="$PROJECT_DIR$/_tool/chainerDataset.py" />
         <option value="$PROJECT_DIR$/train_resnet_cifar10_gpu.py" />
-        <option value="$PROJECT_DIR$/branchynet/utils.py" />
-        <option value="$PROJECT_DIR$/networks/alex_cifar100.py" />
         <option value="$PROJECT_DIR$/networks/alex_cifar10.py" />
-        <option value="$PROJECT_DIR$/networks/lenet_mnist.py" />
-        <option value="$PROJECT_DIR$/networks/resnet_cifar10.py" />
         <option value="$PROJECT_DIR$/networks/resnet_cifar100.py" />
         <option value="$PROJECT_DIR$/train_resnet_cifar100_gpu.py" />
         <option value="$PROJECT_DIR$/test_alex_cifar10_gpu.py" />
         <option value="$PROJECT_DIR$/test_lenet_mnist_gpu.py" />
         <option value="$PROJECT_DIR$/networks/vgg_cifar10.py" />
-        <option value="$PROJECT_DIR$/train_vgg16.cifar10_gpu.py" />
         <option value="$PROJECT_DIR$/branchynet/net.py" />
+        <option value="$PROJECT_DIR$/train_vgg16.cifar10_gpu.py" />
+        <option value="$PROJECT_DIR$/networks/resnet_cifar10.py" />
+        <option value="$PROJECT_DIR$/networks/alex_cifar100.py" />
+        <option value="$PROJECT_DIR$/networks/lenet_mnist.py" />
+        <option value="$PROJECT_DIR$/branchynet/utils.py" />
+        <option value="$PROJECT_DIR$/train_vgg16_cifar100_gpu.py" />
+        <option value="$PROJECT_DIR$/networks/vgg11.cifar.py" />
+        <option value="$PROJECT_DIR$/networks/vgg16_cifar.py" />
       </list>
     </option>
   </component>
@@ -218,6 +257,11 @@
             <path>
               <item name="branchynet" type="b2602c69:ProjectViewProjectNode" />
               <item name="branchynet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="branchynet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="branchynet" type="462c0819:PsiDirectoryNode" />
+              <item name="ChainerDatasets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="branchynet" type="b2602c69:ProjectViewProjectNode" />
@@ -317,7 +361,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32919255" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32919255" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32919255" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32919255" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32919255" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -346,7 +390,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/branchynet/utils.py</url>
-          <line>306</line>
+          <line>307</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -365,24 +409,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Original/experiment_resnet_cifar10_cpu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="115" column="47" lean-forward="true" selection-start-line="115" selection-start-column="47" selection-end-line="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Original/experiment_lenet_mnist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-667">
-          <caret line="40" column="41" lean-forward="true" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fine-grained/_models/train_resnet_cifar10_gpu.py" />
     <entry file="file://$PROJECT_DIR$/_models/__init__.py" />
     <entry file="file://$PROJECT_DIR$/_tool/readPKL.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -562,16 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/networks/lenet_mnist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/chainer-1.24.0-py2.7.egg/chainer/links/connection/convolution_2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -593,13 +609,6 @@
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_lenet_mnist_gpu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="74" column="49" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -630,70 +639,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/networks/resnet_cifar100.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="24" selection-start-line="24" selection-end-line="25" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/networks/alex_cifar100.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="45" column="43" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/networks/resnet_cifar10.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train_lenet_mnist_gpu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/networks/alex_cifar10.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/networks/vgg_cifar10.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train_alex_cifar10_gpu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="53" lean-forward="true" selection-end-line="80" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
@@ -707,16 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/branchynet/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="102" column="60" selection-start-line="102" selection-start-column="60" selection-end-line="102" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#92#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_alex_cifar10_gpu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -727,10 +666,139 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test_lenet_mnist_gpu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networks/vgg_cifar10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/train_vgg16.cifar10_gpu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="165">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networks/resnet_cifar100.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networks/resnet_cifar10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="28" column="46" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networks/alex_cifar10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networks/alex_cifar100.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_alex_cifar10_gpu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="44" column="41" lean-forward="true" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/branchynet/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="259" column="20" selection-start-line="259" selection-start-column="20" selection-end-line="259" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_vgg16_cifar100_gpu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networks/alex_cifar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networks/lenet_mnist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networks/vgg11.cifar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networks/vgg16_cifar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
