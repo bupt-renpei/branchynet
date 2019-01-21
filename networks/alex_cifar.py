@@ -16,7 +16,7 @@ conv = lambda n: [L.Convolution2D(n, 32, 3, pad=1, stride=1), FL(F.relu)]
 cap = lambda n: [FL(F.max_pooling_2d, 3, 2), L.Linear(n, 10)]
 
 
-def gen_2b(branch1, branch2, n_class=10):
+def gen_2b(n_class):
     network = [
         L.Convolution2D(3, 32, 5, pad=2, stride=1),
         FL(F.relu),
@@ -53,8 +53,7 @@ def gen_2b(branch1, branch2, n_class=10):
     return network
 
 
-def get_network(percentTrainKeeps=1):
-    network = gen_2b(branch1=norm() + conv(64) + conv(32) + cap(512),
-                     branch2=norm() + conv(96) + cap(128))
+def get_network(n_class=10):
+    network = gen_2b(n_class)
     net = BranchyNet(network, percentTrainKeeps=percentTrainKeeps)
     return net
