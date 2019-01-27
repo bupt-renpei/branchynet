@@ -45,17 +45,23 @@ def process_data(raw_train, raw_test):
     list_raw_test_x = []
     list_raw_test_y = []
 
-    for item_train in raw_train:
-        list_raw_train_x.append(item_train[0])
-        list_raw_train_y.append(item_train[1])
+    # for item_train in raw_train:
+    #     list_raw_train_x.append(item_train[0])
+    #     list_raw_train_y.append(item_train[1])
+    #
+    # for item_test in raw_test:
+    #     list_raw_test_x.append(item_test[0])
+    #     list_raw_test_y.append(item_test[1])
 
-    for item_test in raw_test:
-        list_raw_test_x.append(item_test[0])
-        list_raw_test_y.append(item_test[1])
+    # Train-sample
+    for i in random.sample(range(1, 99), 10):
+        list_raw_train_x.append(raw_train[i][0])
+        list_raw_train_y.append(raw_train[i][1])
 
-    # for i in random.sample(range(1, 9999), 100):
-    #     list_raw_test_x.append(raw_test[i][0])
-    #     list_raw_test_y.append(raw_test[i][1])
+    # Test-sample
+    for i in random.sample(range(1, 99), 10):
+        list_raw_test_x.append(raw_test[i][0])
+        list_raw_test_y.append(raw_test[i][1])
 
     x_train = numpy.array(list_raw_train_x)
     y_train = numpy.array(list_raw_train_y)
