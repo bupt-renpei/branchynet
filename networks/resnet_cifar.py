@@ -12,14 +12,14 @@ def norm():
     return [FL(F.relu),
             FL(F.local_response_normalization,n=3, alpha=5e-05, beta=0.75)]
 
-def get_network(percentTrainKeeps=1, n_class=10):
+def get_network(percentTrainKeeps=1, n_class=10, n_layer=5):  # n_layer=18(110); =9(56); =5(32)
     conv = lambda n: [L.Convolution2D(n, 32,  3, pad=1, stride=1), FL(F.relu)]
 
     cap = lambda n: [L.Linear(n, 10)]
 
     # ResNet-110 for CiFAR10 as presented in the ResNet paper
     w = math.sqrt(2)
-    n = 18
+    n = n_layer
     network = [
         L.Convolution2D(3, 16, 3, 1, 0, w),
         L.BatchNormalization(16),

@@ -8,8 +8,8 @@ from chainer import cuda
 
 # Define Network
 
-from networks import resnet_cifar100
-branchyNet = resnet_cifar100.get_network()
+from networks import resnet_cifar
+branchyNet = resnet_cifar.get_network(n_class=10, n_layer=18)
 
 # branchyNet.print_models()  # ren +
 print '0. Define Network'
@@ -24,7 +24,7 @@ branchyNet.training()
 # x_train, y_train, _, _ = pcifar10.get_data()  # original
 
 from _tool import chainerDataset
-x_train, y_train, _, _ = chainerDataset.get_chainer_cifar100()
+x_train, y_train, _, _ = chainerDataset.get_chainer_cifar10()
 
 print '1. Import Data'
 
@@ -65,17 +65,17 @@ print '4. Save model/data'
 
 import dill
 branchyNet.to_cpu()
-with open("_models/train_resnet_cifar100_gpu_(network).bn", "w") as f:
+with open("_models/train_resnet110_cifar10_gpu_(network).bn", "w") as f:
     dill.dump(branchyNet, f)
-with open("_models/train_resnet_cifar100_gpu_(main_loss).pkl", "w") as f:
+with open("_models/train_resnet110_cifar10_gpu_(main_loss).pkl", "w") as f:
     dill.dump({'main_loss': main_loss}, f)
-with open("_models/train_resnet_cifar100_gpu_(main_acc).pkl", "w") as f:
+with open("_models/train_resnet110_cifar10_gpu_(main_acc).pkl", "w") as f:
     dill.dump({'main_acc': main_acc}, f)
-with open("_models/train_resnet_cifar100_gpu_(main_time).pkl", "w") as f:
+with open("_models/train_resnet110_cifar10_gpu_(main_time).pkl", "w") as f:
     dill.dump({'main_time': main_time}, f)
-with open("_models/train_resnet_cifar100_gpu_(branch_loss).pkl", "w") as f:
+with open("_models/train_resnet110_cifar10_gpu_(branch_loss).pkl", "w") as f:
     dill.dump({'branch_loss': branch_loss}, f)
-with open("_models/train_resnet_cifar100_gpu_(branch_acc).pkl", "w") as f:
+with open("_models/train_resnet110_cifar10_gpu_(branch_acc).pkl", "w") as f:
     dill.dump({'branch_acc': branch_acc}, f)
-with open("_models/train_resnet_cifar100_gpu_(branch_time).pkl", "w") as f:
+with open("_models/train_resnet110_cifar10_gpu_(branch_time).pkl", "w") as f:
     dill.dump({'branch_time': branch_time}, f)

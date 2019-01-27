@@ -8,8 +8,8 @@ from chainer import cuda
 
 # Define Network
 
-from networks import vgg16_cifar
-branchyNet = vgg16_cifar.get_network(n_class=100)
+from networks import resnet_cifar
+branchyNet = resnet_cifar.get_network(n_class=100, n_layer=18)
 
 # branchyNet.print_models()  # ren +
 print '0. Define Network'
@@ -31,8 +31,9 @@ print '1. Import Data'
 
 # Settings
 
-TRAIN_BATCHSIZE = 128  # 512 ren -
-TRAIN_NUM_EPOCHS = 100  # 50
+TRAIN_BATCHSIZE = 16  # 64
+# TEST_BATCHSIZE = 64  # 1  #  ren -
+TRAIN_NUM_EPOCHS = 100
 
 branchyNet.verbose = False  # ren +
 branchyNet.gpu = True  # ren +
@@ -64,17 +65,17 @@ print '4. Save model/data'
 
 import dill
 branchyNet.to_cpu()
-with open("_models/train_vgg16_cifar100_gpu_(network).bn", "w") as f:
+with open("_models/train_resnet110_cifar100_gpu_(network).bn", "w") as f:
     dill.dump(branchyNet, f)
-with open("_models/train_vgg16_cifar100_gpu_(main_loss).pkl", "w") as f:
+with open("_models/train_resnet110_cifar100_gpu_(main_loss).pkl", "w") as f:
     dill.dump({'main_loss': main_loss}, f)
-with open("_models/train_vgg16_cifar100_gpu_(main_acc).pkl", "w") as f:
+with open("_models/train_resnet110_cifar100_gpu_(main_acc).pkl", "w") as f:
     dill.dump({'main_acc': main_acc}, f)
-with open("_models/train_vgg16_cifar100_gpu_(main_time).pkl", "w") as f:
+with open("_models/train_resnet110_cifar100_gpu_(main_time).pkl", "w") as f:
     dill.dump({'main_time': main_time}, f)
-with open("_models/train_vgg16_cifar100_gpu_(branch_loss).pkl", "w") as f:
+with open("_models/train_resnet110_cifar100_gpu_(branch_loss).pkl", "w") as f:
     dill.dump({'branch_loss': branch_loss}, f)
-with open("_models/train_vgg16_cifar100_gpu_(branch_acc).pkl", "w") as f:
+with open("_models/train_resnet110_cifar100_gpu_(branch_acc).pkl", "w") as f:
     dill.dump({'branch_acc': branch_acc}, f)
-with open("_models/train_vgg16_cifar100_gpu_(branch_time).pkl", "w") as f:
+with open("_models/train_resnet110_cifar100_gpu_(branch_time).pkl", "w") as f:
     dill.dump({'branch_time': branch_time}, f)

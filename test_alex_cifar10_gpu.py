@@ -59,9 +59,10 @@ with open("_models/test_alexnet_cifar10_gpu_(g_num_exits).pkl", "w") as f:
 with open("_models/test_alexnet_cifar10_gpu_(g_accbreakdowns).pkl", "w") as f:
     dill.dump({'g_accbreakdowns': g_accbreakdowns}, f)
 
-branchyNet.verbose = True
+branchyNet.verbose = False
 
 # Test branch
+branchyNet.to_gpu()
 
 b_baseacc, b_basediff, b_num_exits, b_accbreakdowns = utils.test(branchyNet, x_test, y_test,
                                                                  batchsize=TEST_BATCHSIZE)
@@ -76,10 +77,10 @@ with open("_models/test_alexnet_cifar10_gpu_(b_num_exits).pkl", "w") as f:
 with open("_models/test_alexnet_cifar10_gpu_(b_accbreakdowns).pkl", "w") as f:
     dill.dump({'b_accbreakdowns': b_accbreakdowns}, f)
 
-print 'b_baseacc', b_baseacc
-print 'b_basediff', b_basediff
-print 'b_num_exits', b_num_exits
-print 'b_accbreakdowns', b_accbreakdowns
+print 'b_baseacc: ', b_baseacc
+print 'b_basediff: ', b_basediff
+print 'b_num_exits: ', b_num_exits
+print 'b_accbreakdowns: ', b_accbreakdowns
 
 # Specify thresholds
 
@@ -103,13 +104,13 @@ g_diffs *= 1000.
 
 
 branchyNet.to_cpu()
-with open("_models/alexnet_cifar10_results_GPU_(g_ts).pkl", "w") as f:
+with open("_models/test_alexnet_cifar10_results_GPU_(g_ts).pkl", "w") as f:
     dill.dump({'g_ts': g_ts}, f)
-with open("_models/alexnet_cifar10_results_GPU_(g_accs).pkl", "w") as f:
+with open("_models/test_alexnet_cifar10_results_GPU_(g_accs).pkl", "w") as f:
     dill.dump({'g_accs': g_accs}, f)
-with open("_models/alexnet_cifar10_results_GPU_(g_diffs).pkl", "w") as f:
+with open("_models/test_alexnet_cifar10_results_GPU_(g_diffs).pkl", "w") as f:
     dill.dump({'g_diffs': g_diffs}, f)
-with open("_models/alexnet_cifar10_results_GPU_(g_exits).pkl", "w") as f:
+with open("_models/test_alexnet_cifar10_results_GPU_(g_exits).pkl", "w") as f:
     dill.dump({'g_exits': g_exits}, f)
 
 print 'g_ts: ', g_ts

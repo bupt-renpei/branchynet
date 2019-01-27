@@ -16,12 +16,14 @@ import random
 # print type(y_test)   # (10000,)
 
 def get_lenet_mnist():
-    aw_train, raw_test = datasets.get_mnist(withlabel=True, ndim=1, scale=1.)
+    raw_train, raw_test = datasets.get_mnist(withlabel=True, ndim=1, scale=1.)
     return process_data(raw_train, raw_test)
+
 
 def get_chainer_cifar10():
     raw_train, raw_test = datasets.get_cifar10(withlabel=True, ndim=3, scale=1.)
     return process_data(raw_train, raw_test)
+
 
 def get_chainer_cifar100():
     raw_train, raw_test = datasets.get_cifar100(withlabel=True, ndim=3, scale=1.)
@@ -47,13 +49,13 @@ def process_data(raw_train, raw_test):
         list_raw_train_x.append(item_train[0])
         list_raw_train_y.append(item_train[1])
 
-    # for item_test in raw_test:
-    #     list_raw_test_x.append(item_test[0])
-    #     list_raw_test_y.append(item_test[1])
+    for item_test in raw_test:
+        list_raw_test_x.append(item_test[0])
+        list_raw_test_y.append(item_test[1])
 
-    for i in random.sample(range(1, 9999), 100):
-        list_raw_test_x.append(raw_test[i][0])
-        list_raw_test_y.append(raw_test[i][1])
+    # for i in random.sample(range(1, 9999), 100):
+    #     list_raw_test_x.append(raw_test[i][0])
+    #     list_raw_test_y.append(raw_test[i][1])
 
     x_train = numpy.array(list_raw_train_x)
     y_train = numpy.array(list_raw_train_y)
